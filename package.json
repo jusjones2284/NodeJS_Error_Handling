@@ -1,0 +1,14 @@
+{
+  "name": "nodejs_error_handling",
+  "version": "1.0.0",
+  "description": "This is nodejs error handling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
