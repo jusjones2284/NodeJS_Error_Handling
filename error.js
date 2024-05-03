@@ -19,9 +19,9 @@ const {CustomError} = require("./CustomError")
 
 
 function doSomething(){
-    // const data = fetch("localhost:300/api")
-    console.log("I am from doSomethingFunction");
-    const data = "I am from doSomethingFunction"
+    const data = fetch("localhost:300/api")
+    // console.log("I am from doSomethingFunction");
+    // const data = "I am from doSomethingFunction"
     return data; 
 }
 
@@ -33,22 +33,22 @@ function doSomething(){
 
 // doSomething()
 
-const promise = new Promise((resolve, reject)=>{
-    if(false){
-        resolve(doSomething());
-    } else {
-        reject(doSomething())
-    }
-});
+// const promise = new Promise((resolve, reject)=>{
+//     if(true){
+//         resolve(doSomething());
+//     } else {
+//         reject(doSomething())
+//     }
+// });
 
-promise
-    .then((val)=> {
-        console.log(val);
-    })
-    .catch((err) =>{
-        console.log("Error Occured");
-        console.log(err);
-    })
+// promise
+//     .then((val)=> {
+//         console.log(val);
+//     })
+//     .catch((err) =>{
+//         console.log("Error Occured");
+//         console.log(err);
+//     })
 
 
 
@@ -59,3 +59,16 @@ promise
 //     console.log("Error Occured");
 //     console.log(e)
 // };
+
+//Exception with Async and Await
+
+const someFunction = async()=>{
+
+    try{
+        await doSomething();
+    } catch (err){
+        throw new CustomError(err.message)
+    }
+}
+
+someFunction();
